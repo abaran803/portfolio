@@ -1,0 +1,23 @@
+{
+  "name": "ayush-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.19",
+    "clsx": "^2.1.1",
+    "framer-motion": "^11.2.6",
+    "lucide-react": "^0.462.0",
+    "next": "14.2.5",
+    "next-themes": "^0.3.0",
+    "postcss": "^8.4.38",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "tailwindcss": "^3.4.7"
+  }
+}

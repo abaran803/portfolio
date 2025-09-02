@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html { scroll-behavior: smooth; }
+body { @apply bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100; }
+.container-g { @apply container max-w-6xl px-4 md:px-6; }
+.section { @apply py-16 md:py-24; }
+.card { @apply rounded-2xl shadow-soft border border-slate-200/60 dark:border-slate-800/60 bg-white/70 dark:bg-slate-900/50 backdrop-blur; }
+.badge { @apply inline-flex items-center rounded-full border border-slate-200 dark:border-slate-800 px-3 py-1 text-sm; }
+.link { @apply underline underline-offset-4 decoration-slate-300 hover:decoration-slate-500; }
