@@ -1,18 +1,30 @@
 import Section from "@/components/Section";
+
 const data = [
   {
-    title: "Workflow Automation (Fynd)",
-    desc: "React Flow-based execution & validation with versioning and import/export/share.",
-    highlights: ["React Flow", "Versioning", "Autosave", "Validation"],
-    links: [{ label: "Case Study", href: "#blog" }],
+    title: "Recipe Sharing API",
+    desc: "A comprehensive, production-ready REST API for sharing and discovering recipes, built with modern backend technologies and best practices.",
+    highlights: ["NodeJS", "ExpressJS", "PostgreSQL", "Swagger"],
+    links: [
+      {
+        label: "Project Link",
+        href: "https://github.com/abaran803/masteringbackend-project",
+      },
+    ],
   },
   {
-    title: "E‑Commerce Extensions (Webkul)",
-    desc: "Custom integrations & extensions for Shopify/Magento; performance tuning.",
-    highlights: ["React", "REST APIs", "Plugins"],
-    links: [{ label: "Overview", href: "#experience" }],
+    title: "B Visualizer",
+    desc: "Visual representation of Backtracking Algorithms like N-Queen, Rat in the maze and Sudoku Solver",
+    highlights: ["React", "Backtracking", "Algorithms"],
+    links: [
+      {
+        label: "Project Link",
+        href: "https://github.com/abaran803/B-Visualizer",
+      },
+    ],
   },
 ];
+
 function ProjectCard({ p }) {
   return (
     <div className="card p-6 flex flex-col">
@@ -35,6 +47,7 @@ function ProjectCard({ p }) {
     </div>
   );
 }
+
 export default function Projects() {
   return (
     <Section id="projects" eyebrow="Projects" title="Selected work">
