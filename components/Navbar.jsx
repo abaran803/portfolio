@@ -16,7 +16,7 @@ export default function Navbar() {
       <div className="container-g flex items-center justify-between h-16">
         {/* Logo */}
         <Link href="#" className="flex items-center gap-2">
-          <img src="/logo.svg" alt="AB" className="h-7 w-7" />
+          <img src="/profile.jpeg" alt="AB" className="h-7 w-7 rounded-lg" />
           <span className="font-semibold">Ayush Baranwal</span>
         </Link>
 
