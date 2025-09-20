@@ -3,11 +3,15 @@ function ExpItem({ role, company, period, points }) {
   return (
     <div className="card p-6">
       <div className="flex flex-wrap items-baseline justify-between gap-2">
-        <div className="text-lg md:text-xl font-semibold">{role} — {company}</div>
+        <div className="text-lg md:text-xl font-semibold">
+          {role} - {company}
+        </div>
         <div className="text-sm text-slate-500">{period}</div>
       </div>
       <ul className="mt-3 list-disc pl-5 space-y-2 text-slate-700 dark:text-slate-300">
-        {points.map((p, i) => <li key={i}>{p}</li>)}
+        {points.map((p, i) => (
+          <li key={i}>{p}</li>
+        ))}
       </ul>
     </div>
   );
@@ -25,7 +29,7 @@ export default function Experience() {
             "Added import/export/share, autosave, semantic versioning, and execution/version tables.",
             "Improved IfActivity, trigger validation, fit view; converted Swirl to React; added serverless template and forms.",
             "Built robust React.js + MUI components; achieved ~95% component test coverage with Jest/RTL.",
-            "Led debugging/UX polish; collaborated with backend/design for seamless delivery."
+            "Led debugging/UX polish; collaborated with backend/design for seamless delivery.",
           ]}
         />
         <ExpItem
@@ -35,7 +39,7 @@ export default function Experience() {
           points={[
             "Developed custom e‑commerce extensions and plugins with React.js and REST APIs.",
             "Shipped scalable frontend solutions; improved plugin performance and modularity.",
-            "Maintained code quality with best practices and clean architecture."
+            "Maintained code quality with best practices and clean architecture.",
           ]}
         />
       </div>

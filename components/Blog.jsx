@@ -1,22 +1,50 @@
+"use client";
 import Section from "@/components/Section";
-const posts = [
-  { title: "Improving Workflow Validation in React Flow", desc: "A deep dive into building reliable, user-friendly validation for complex workflows.", href: "#" },
-  { title: "Debugging Complex React Apps Like a Pro", desc: "Patterns, tips, and tools that helped me reduce time-to-fix in large codebases.", href: "#" },
-  { title: "Docker for Developers — A Practical Journey", desc: "Notes and exercises from my path to becoming confident with Docker.", href: "#" },
-];
+import { useEffect, useState } from "react";
 export default function Blog() {
+  const [articles, setArticles] = useState([]);
+  const [loadingArticles, setLoadingArticles] = useState(true);
+  const mediumArticle =
+    "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@abaran803";
+
+  useEffect(() => {
+    fetch(mediumArticle)
+      .then((res) => res.json())
+      .then((data) =>
+        setArticles(
+          data.items.slice(0, 3).map((item) => ({
+            title: item.title,
+            desc: `${item.description.split(".")[0]}.`,
+            href: item.link,
+          }))
+        )
+      )
+      .finally(() => setLoadingArticles(false));
+  }, []);
+
+  if (loadingArticles) {
+    return <div className="p-6">Loading...</div>;
+  }
+
   return (
     <Section id="blog" eyebrow="Writing" title="Notes & Case Studies">
       <div className="grid md:grid-cols-3 gap-4">
-        {posts.map((p) => (
-          <a key={p.title} href={p.href} className="card p-6 hover:shadow-lg transition-shadow">
+        {articles.map((p) => (
+          <a
+            target="_blank"
+            key={p.title}
+            href={p.href}
+            className="card p-6 hover:shadow-lg transition-shadow"
+          >
             <div className="font-semibold">{p.title}</div>
-            <p className="mt-2 text-slate-700 dark:text-slate-300">{p.desc}</p>
+            <p
+              className="mt-2 text-slate-700 dark:text-slate-300"
+              dangerouslySetInnerHTML={{ __html: p.desc }}
+            ></p>
             <div className="mt-4 link">Read →</div>
           </a>
         ))}
       </div>
-      <p className="mt-6 text-sm text-slate-500">Tip: connect your real blog or add MDX later.</p>
     </Section>
   );
 }
